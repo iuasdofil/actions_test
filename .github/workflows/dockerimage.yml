@@ -13,9 +13,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: echo tag test
-      run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-    - name: echo tag
-      run: echo ${{ steps.tag.outputs.result }}
+    - name: Set output
+      id: var5
+      run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+    - name: Check output
+      env:
+        RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+      run: |
+        echo $RELEASE_VERSION
+        echo ${{ steps.vars.outputs.tag }}
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
