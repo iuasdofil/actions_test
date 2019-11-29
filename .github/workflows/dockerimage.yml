@@ -1,6 +1,6 @@
 name: Docker Image CI
 
-on: [push]
+on: [push, tags]
 
 jobs:
 
@@ -10,5 +10,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: echo tag test
+      run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+    - name: echo tag
+      run: echo ${{ steps.tag.outputs.result }}
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
