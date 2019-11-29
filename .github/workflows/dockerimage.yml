@@ -2,8 +2,9 @@ name: Docker Image CI
 
 # on: [push, tags]
 on:
-  tags:
-      # - refs/tags/*
+  push:
+    tags:
+      - *
 jobs:
 
   build:
