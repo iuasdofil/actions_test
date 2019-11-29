@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set output
-      id: var5
+      id: vars
       run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
     - name: Check output
       env:
