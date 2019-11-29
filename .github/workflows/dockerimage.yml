@@ -3,8 +3,8 @@ name: Docker Image CI
 # on: [push, tags]
 on:
   push:
-    branches:
-      - refs/tags/*
+    tags:
+      # - refs/tags/*
 jobs:
 
   build:
