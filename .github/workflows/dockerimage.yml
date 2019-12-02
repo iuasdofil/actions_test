@@ -27,7 +27,3 @@ jobs:
       run: docker images
 
 
-- Your workflow file was invalid: The pipeline is not valid.
-.github/workflows/dockerimage.yml (Line: 13, Col: 24): Unrecognized named-value: 'steps'.
-Located at position 1 within expression: steps.vars.outputs.tag
-View more details on GitH
