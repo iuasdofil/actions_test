@@ -23,6 +23,6 @@ jobs:
         echo ${RELEASE_VERSION:1}
         echo $GITHUB_REF
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:${RELEASE_VERSION:11}
+      run: docker build . --file Dockerfile --tag my-image-name:${$GITHUB_REF:11}
     - name: list of docker images
       run: docker images
