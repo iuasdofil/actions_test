@@ -22,6 +22,6 @@ jobs:
         echo ${ RELEASE_VERSION:1 }
         echo ${{ steps.vars.outputs.tag }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:${ RELEASE_VERSION:1 }
+      run: docker build . --file Dockerfile --tag my-image-name:$( RELEASE_VERSION:1 )
     - name: list of docker images
       run: docker images
