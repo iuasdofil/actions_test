@@ -21,7 +21,7 @@ jobs:
         echo $RELEASE_VERSION
         echo ${{ steps.vars.outputs.tag:1 }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:${{ steps.vars.outputs.tag:1 }}
+      run: docker build . --file Dockerfile --tag my-image-name:${{ $RELEASE_VERSION:1 }}
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: list of docker images
       run: docker images
