@@ -27,7 +27,7 @@ jobs:
       run: docker images
 
 
-- Your workflow file was invalid: The pipeline is not valid. .github/workflows/dockerimage.yml (Line: 20, Col: 12): Unexpected symbol: 'tag:1'.
-Located at position 20 within expression: steps.vars.outputs.tag:1,.github/workflows/dockerimage.yml (Line: 24, Col: 12): Unexpected symbol: '$RELEASE_VERSION:1'.
-Located at position 1 within expression: $RELEASE_VERSION:1
-View more detai
+#- Your workflow file was invalid: The pipeline is not valid. .github/workflows/dockerimage.yml (Line: 20, Col: 12): Unexpected symbol: 'tag:1'.
+#Located at position 20 within expression: steps.vars.outputs.tag:1,.github/workflows/dockerimage.yml (Line: 24, Col: 12): Unexpected symbol: '$RELEASE_VERSION:1'.
+#Located at position 1 within expression: $RELEASE_VERSION:1
+#View more detai
