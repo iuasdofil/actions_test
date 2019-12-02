@@ -23,14 +23,7 @@ jobs:
     - name: Build the Docker image
       env:
         RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-      run: docker build . --file Dockerfile --tag my-image-name:${${{ $RELEASE_VERSION }}:1}
+      run: docker build . --file Dockerfile --tag my-image-name:${RELEASE_VERSION:1}
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: list of docker images
       run: docker images
-
-
-#- Your workflow file was invalid: The pipeline is not valid.
-#.github/workflows/dockerimage.yml (Line: 20, Col: 12): Unexpected symbol: 'tag:1'.
-#Located at position 20 within expression: steps.vars.outputs.tag:1,.github/workflows/dockerimage.yml (Line: 24, Col: 12): Unexpected symbol: '$RELEASE_VERSION'.
-#Located at position 1 within expression: $RELEASE_VERSION
-#View more det
