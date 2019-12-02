@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     env:
-      RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+      RELEASE_VERSION: ${GITHUB_REF:10}
 
     steps:
     - uses: actions/checkout@v1
@@ -25,3 +25,9 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name:${RELEASE_VERSION:1}
     - name: list of docker images
       run: docker images
+
+
+- Your workflow file was invalid: The pipeline is not valid.
+.github/workflows/dockerimage.yml (Line: 13, Col: 24): Unrecognized named-value: 'steps'.
+Located at position 1 within expression: steps.vars.outputs.tag
+View more details on GitH
